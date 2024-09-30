@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/backgr">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thực Hành An Toàn Thông Tin"
+            android:textSize="30dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="40dp"
+            />
+        <Button
+            android:id="@+id/madichvong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã Dịch Vòng"
+            app:layout_constraintTop_toBottomOf="@id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/maaffine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã Affine"
+            app:layout_constraintTop_toBottomOf="@id/madichvong"
+            app:layout_constraintStart_toStartOf="@+id/madichvong"
+            app:layout_constraintEnd_toEndOf="@+id/madichvong"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/mavigenere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã Vigenere"
+            app:layout_constraintTop_toBottomOf="@id/maaffine"
+            app:layout_constraintStart_toStartOf="@+id/maaffine"
+            app:layout_constraintEnd_toEndOf="@+id/maaffine"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/mathaythe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã Thay Thế"
+            app:layout_constraintTop_toBottomOf="@id/mavigenere"
+            app:layout_constraintStart_toStartOf="@+id/mavigenere"
+            app:layout_constraintEnd_toEndOf="@+id/mavigenere"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/mahill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã Hóa Hill"
+            app:layout_constraintTop_toBottomOf="@id/mathaythe"
+            app:layout_constraintStart_toStartOf="@+id/mathaythe"
+            app:layout_constraintEnd_toEndOf="@+id/mathaythe"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/mahang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã Hàng"
+            app:layout_constraintTop_toBottomOf="@id/mahill"
+            app:layout_constraintStart_toStartOf="@+id/mahill"
+            app:layout_constraintEnd_toEndOf="@+id/mahill"
+            android:layout_marginTop="16dp" />
+
+        <!-- Nhóm 8 căn dưới cùng -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nhóm 8"
+            android:textSize="20dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="30dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
