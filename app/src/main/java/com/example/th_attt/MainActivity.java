@@ -1,7 +1,9 @@
 package com.example.th_attt;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,7 +14,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    Button mathaythe,madichvong,maaffine,mavigenere,mahill,mahang;
+    Button mathaythe,madichvong,maaffine,mavigenere,mahill,mahang,mathaythedon;
+    Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,48 +28,117 @@ public class MainActivity extends AppCompatActivity {
         mavigenere = findViewById(R.id.mavigenere);
         mahill = findViewById(R.id.mahill);
         mahang = findViewById(R.id.mahang);
-        mathaythe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MathaytheActivity.class);
-                startActivity(intent);
-            }
-        });
+        mathaythedon = findViewById(R.id.mathaythedonbang);
         madichvong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MadichvongActivity.class);
-                startActivity(intent);
+                madichvong.setBackgroundColor(Color.parseColor("#D32F2F"));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        madichvong.setBackgroundColor(Color.parseColor("#FF5722"));
+                        Intent intent = new Intent(MainActivity.this, MadichvongActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.chuyencanh, R.anim.chuyencanh2);
+                    }
+                }, 500);
+
             }
         });
-        maaffine.setOnClickListener(new View.OnClickListener() {
+        mathaythe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MaaffineActivity.class);
-                startActivity(intent);
+                mathaythe.setBackgroundColor(Color.parseColor("#D32F2F"));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mathaythe.setBackgroundColor(Color.parseColor("#FFC107"));
+                        Intent intent = new Intent(MainActivity.this, MathaytheActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.chuyencanh, R.anim.chuyencanh2);
+                    }
+                }, 500);
+
+            }
+        });
+        mathaythedon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mathaythedon.setBackgroundColor(Color.parseColor("#D32F2F"));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mathaythedon.setBackgroundColor(Color.parseColor("#03A9F4"));
+                        Intent intent = new Intent(MainActivity.this, MathaythedonbangActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.chuyencanh, R.anim.chuyencanh2);
+                    }
+                }, 500);
+
             }
         });
         mavigenere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MavigenereActivity.class);
-                startActivity(intent);
+                mavigenere.setBackgroundColor(Color.parseColor("#D32F2F"));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mavigenere.setBackgroundColor(Color.parseColor("#8BC34A"));
+                        Intent intent = new Intent(MainActivity.this, MavigenereActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.chuyencanh, R.anim.chuyencanh2);
+                    }
+                }, 500);
+
+            }
+        });
+        maaffine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                maaffine.setBackgroundColor(Color.parseColor("#D32F2F"));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        maaffine.setBackgroundColor(Color.parseColor("#FFEB3B"));
+                        Intent intent = new Intent(MainActivity.this, MaaffineActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.chuyencanh, R.anim.chuyencanh2);
+                    }
+                }, 500);
+
             }
         });
         mahill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MahillActivity.class);
-                startActivity(intent);
+                mahill.setBackgroundColor(Color.parseColor("#D32F2F"));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mahill.setBackgroundColor(Color.parseColor("#4CAF50"));
+                        Intent intent = new Intent(MainActivity.this, MahillActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.chuyencanh, R.anim.chuyencanh2);
+                    }
+                }, 500);
+
             }
         });
         mahang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MahangActivity.class);
-                startActivity(intent);
+                mahang.setBackgroundColor(Color.parseColor("#D32F2F"));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mahang.setBackgroundColor(Color.parseColor("#009688"));
+                        Intent intent = new Intent(MainActivity.this, MahangActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.chuyencanh, R.anim.chuyencanh2);
+                    }
+                }, 500);
+
             }
         });
-    }
-
-}
+    }}

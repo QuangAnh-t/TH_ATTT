@@ -8,6 +8,13 @@
     tools:context=".MadichvongActivity">
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgr"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,20 +27,22 @@
 
     <EditText
         android:id="@+id/vanban"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="164dp"
+        android:layout_width="326dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="160dp"
         android:hint="Nhập Văn Bản"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/khoak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="329dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
         android:hint="Nhập khóa K"
         app:layout_constraintEnd_toEndOf="@+id/vanban"
+        app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toStartOf="@+id/vanban"
         app:layout_constraintTop_toBottomOf="@+id/vanban" />
 
@@ -41,7 +50,8 @@
         android:id="@+id/mahoa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
         android:text="Mã Hóa"
         app:layout_constraintStart_toStartOf="@+id/khoak"
         app:layout_constraintTop_toBottomOf="@+id/khoak" />
@@ -50,10 +60,12 @@
         android:id="@+id/giaima"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
         android:text="Giải Mã"
         app:layout_constraintBottom_toBottomOf="@+id/mahoa"
         app:layout_constraintStart_toEndOf="@+id/mahoa"
-        app:layout_constraintTop_toTopOf="@+id/mahoa" />
+        app:layout_constraintTop_toTopOf="@+id/mahoa"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/back"
@@ -76,5 +88,16 @@
         app:layout_constraintHorizontal_bias="0.191"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mahoa" />
-
+    <ImageView
+        android:id="@+id/myImageView"
+        android:layout_width="177dp"
+        android:layout_height="277dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="236dp"
+        android:contentDescription="My image description"
+        android:src="@drawable/anhnhom8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.832" />
 </androidx.constraintlayout.widget.ConstraintLayout>

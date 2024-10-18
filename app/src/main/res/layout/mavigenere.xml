@@ -1,10 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MavigenereActivity">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/backgr"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập văn bản(chữ cái)"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/inputKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập khóa(chữ cái)"
+        android:inputType="text" />
+    <Button
+        android:id="@+id/encryptButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mã hóa" />
+    <Button
+        android:id="@+id/decryptButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Giải mã" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:text="Kết quả"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/myImageView"
+        android:layout_width="177dp"
+        android:layout_height="277dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+
+        android:contentDescription="My image description"
+        android:src="@drawable/anhnhom8" />
+
+</LinearLayout>

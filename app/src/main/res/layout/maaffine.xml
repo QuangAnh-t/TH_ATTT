@@ -6,18 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MaaffineActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgr"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Mã Affine"
+        android:textSize="36dp"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/nhapvanban"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="64dp"
-        android:hint="Nhập Văn Bản"
+        android:hint="Nhập Văn Bản(chữ cái)"
         android:padding="12dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -27,7 +43,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:hint="Nhập giá trị a"
+        android:hint="Nhập giá trị a(số nguyên)"
         android:padding="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +56,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:hint="Nhập giá trị b"
+        android:hint="Nhập giá trị b(số nguyên)"
         android:padding="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,15 +88,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/b" />
 
+    <Button
+        android:id="@+id/back"
+        android:layout_width="119dp"
+        android:layout_height="62dp"
+        android:text="back"
+        app:layout_constraintEnd_toEndOf="@+id/giaima"
+        app:layout_constraintStart_toStartOf="@+id/mahoa"
+        app:layout_constraintTop_toBottomOf="@+id/mahoa"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/hienthi"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="76dp"
         android:padding="16dp"
+        android:textSize="20dp"
         android:text="Kết quả sẽ hiển thị ở đây"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mahoa" />
-
+    <ImageView
+        android:id="@+id/myImageView"
+        android:layout_width="177dp"
+        android:layout_height="277dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="236dp"
+        android:contentDescription="My image description"
+        android:src="@drawable/anhnhom8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.832" />
 </androidx.constraintlayout.widget.ConstraintLayout>

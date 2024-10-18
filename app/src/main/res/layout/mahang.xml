@@ -6,5 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MahangActivity">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgr"/>
+    <ImageView
+        android:id="@+id/myImageView"
+        android:layout_width="177dp"
+        android:layout_height="277dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="236dp"
+        android:contentDescription="My image description"
+        android:src="@drawable/anhnhom8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.832" />
 </androidx.constraintlayout.widget.ConstraintLayout>

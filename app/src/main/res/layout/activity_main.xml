@@ -12,89 +12,159 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/backgr">
+
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:shadowColor="#80000000"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="6"
             android:text="Thực Hành An Toàn Thông Tin"
-            android:textSize="30dp"
             android:textColor="@android:color/black"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="40dp"
-            />
-        <Button
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/madichvong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Mã Dịch Vòng"
-            app:layout_constraintTop_toBottomOf="@id/textView"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:backgroundTint="#FF5722"
+            app:cornerRadius="16dp"
+            android:elevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="20dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/maaffine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:text="Mã Affine"
-            app:layout_constraintTop_toBottomOf="@id/madichvong"
-            app:layout_constraintStart_toStartOf="@+id/madichvong"
-            app:layout_constraintEnd_toEndOf="@+id/madichvong"
-            android:layout_marginTop="16dp" />
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:backgroundTint="#FFEB3B"
+            app:cornerRadius="16dp"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/mathaythe"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="@+id/mathaythe"
+            app:layout_constraintTop_toBottomOf="@+id/mathaythe" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/mavigenere"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Mã Vigenere"
-            app:layout_constraintTop_toBottomOf="@id/maaffine"
-            app:layout_constraintStart_toStartOf="@+id/maaffine"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:backgroundTint="#8BC34A"
+            app:cornerRadius="16dp"
+            android:elevation="4dp"
             app:layout_constraintEnd_toEndOf="@+id/maaffine"
-            android:layout_marginTop="16dp" />
+            app:layout_constraintHorizontal_bias="0.21"
+            app:layout_constraintStart_toStartOf="@+id/maaffine"
+            app:layout_constraintTop_toBottomOf="@+id/maaffine" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/mathaythe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Mã Thay Thế"
-            app:layout_constraintTop_toBottomOf="@id/mavigenere"
-            app:layout_constraintStart_toStartOf="@+id/mavigenere"
-            app:layout_constraintEnd_toEndOf="@+id/mavigenere"
-            android:layout_marginTop="16dp" />
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:backgroundTint="#FFC107"
+            app:cornerRadius="16dp"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/madichvong"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="@+id/madichvong"
+            app:layout_constraintTop_toBottomOf="@+id/madichvong" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/mahill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Mã Hóa Hill"
-            app:layout_constraintTop_toBottomOf="@id/mathaythe"
-            app:layout_constraintStart_toStartOf="@+id/mathaythe"
-            app:layout_constraintEnd_toEndOf="@+id/mathaythe"
-            android:layout_marginTop="16dp" />
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:backgroundTint="#4CAF50"
+            app:cornerRadius="16dp"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/mavigenere"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintStart_toStartOf="@+id/mavigenere"
+            app:layout_constraintTop_toBottomOf="@+id/mavigenere" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/mahang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Mã Hàng"
-            app:layout_constraintTop_toBottomOf="@id/mahill"
-            app:layout_constraintStart_toStartOf="@+id/mahill"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:backgroundTint="#009688"
+            app:cornerRadius="16dp"
+            android:elevation="4dp"
             app:layout_constraintEnd_toEndOf="@+id/mahill"
-            android:layout_marginTop="16dp" />
+            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintStart_toStartOf="@+id/mahill"
+            app:layout_constraintTop_toBottomOf="@+id/mahill" />
 
-        <!-- Nhóm 8 căn dưới cùng -->
-        <TextView
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/mathaythedonbang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nhóm 8"
-            android:textSize="20dp"
-            android:textColor="@android:color/black"
+            android:layout_marginTop="20dp"
+            android:text="Mã Thay thế đơn bảng"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:backgroundTint="#03A9F4"
+            app:cornerRadius="16dp"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/mahang"
+            app:layout_constraintHorizontal_bias="0.534"
+            app:layout_constraintStart_toStartOf="@+id/mahang"
+            app:layout_constraintTop_toBottomOf="@+id/mahang" />
+
+        <ImageView
+            android:id="@+id/myImageView"
+            android:layout_width="177dp"
+            android:layout_height="277dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="236dp"
+            android:contentDescription="My image description"
+            android:src="@drawable/anhnhom8"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="30dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.832" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
