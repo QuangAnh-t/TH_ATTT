@@ -30,7 +30,7 @@ public class MavigenereActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String text = inputText.getText().toString().toUpperCase();
                 String key = inputKey.getText().toString().toUpperCase();
-                if (!text.matches("^[a-zA-Z]+$") || !key.matches("^[a-zA-Z]+$")) {
+                if (!text.matches("^[a-zA-Z ]+$") || !key.matches("^[a-zA-Z]+$")) {
                     Toast.makeText(MavigenereActivity.this, "Vui lòng nhập chữ cho cả văn bản và khóa.", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -45,8 +45,8 @@ public class MavigenereActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String text = inputText.getText().toString().toUpperCase();
                 String key = inputKey.getText().toString().toUpperCase();
-                if (!text.matches("[A-Z]+") || !key.matches("[A-Z]+")) {
-                    Toast.makeText(MavigenereActivity.this, "Vui lòng nhập chữ cái từ A đến Z cho cả văn bản và khóa.", Toast.LENGTH_SHORT).show();
+                if (!text.matches("^[a-zA-Z ]+$") || !key.matches("^[a-zA-Z]+$")) {
+                    Toast.makeText(MavigenereActivity.this, "Vui lòng nhập chữ cho cả văn bản và khóa.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
