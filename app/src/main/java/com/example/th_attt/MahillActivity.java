@@ -27,6 +27,7 @@ public class MahillActivity extends AppCompatActivity {
         EdgeToEdge.enable(this); // Bật chế độ toàn màn hình
         setContentView(R.layout.mahill);
 
+<<<<<<< Updated upstream
         // Thiết lập vùng đệm cho phần view chính khi hiển thị
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -36,6 +37,13 @@ public class MahillActivity extends AppCompatActivity {
 
         nhapvanban = findViewById(R.id.nhapvanban); // Liên kết đến ô nhập văn bản
         ketqua = findViewById(R.id.ketqua); // Liên kết đến ô hiển thị kết quả
+=======
+        // Thiết lập padding cho view chính để tương thích với hệ thống
+        // Khởi tạo các view
+        nhapvanban = findViewById(R.id.nhapvanban);
+        nhapkhoa = findViewById(R.id.nhapkhoa);
+        ketqua = findViewById(R.id.ketqua);
+>>>>>>> Stashed changes
 
         matrixSelectionGroup = findViewById(R.id.matrixSelectionGroup); // Nhóm các nút chọn ma trận
         matrix2x2Inputs = findViewById(R.id.matrix2x2Inputs); // Layout chứa ô nhập cho ma trận 2x2
@@ -58,7 +66,11 @@ public class MahillActivity extends AppCompatActivity {
         Button mahoa = findViewById(R.id.mahoa);
         mahoa.setOnClickListener(v -> onEncryptButtonClick());
 
+<<<<<<< Updated upstream
         // Thiết lập sự kiện khi nhấn nút giải mã
+=======
+        // Nút giải mãx
+>>>>>>> Stashed changes
         Button giaima = findViewById(R.id.giaima);
         giaima.setOnClickListener(v -> onDecryptButtonClick());
     }
