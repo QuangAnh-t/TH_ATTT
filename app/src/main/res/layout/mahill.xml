@@ -1,251 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MahillActivity">
+    android:background="@drawable/setgiaodien">
 
-    <!-- Nền giao diện -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/backgr"/>
-
-    <!-- Hình ảnh của ứng dụng -->
-    <ImageView
-        android:id="@+id/myImageView"
-        android:layout_width="177dp"
-        android:layout_height="277dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="236dp"
-        android:contentDescription="Mô tả ảnh của tôi"
-        android:src="@drawable/anhnhom8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.832" />
-
-    <!-- Tiêu đề của ứng dụng -->
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="Mã hóa Hill"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="30dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Ô nhập văn bản cần mã hóa/giải mã -->
     <EditText
         android:id="@+id/nhapvanban"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Nhập văn bản cần mã hóa/giải mã"
-        android:inputType="text"
-        android:textColor="#000000"
-        android:padding="10dp"
-        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="20dp" />
+        android:background="@drawable/edit_text_background"
+        android:hint="Nhập văn bản cần mã hóa/giải mã"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle" />
 
-    <!-- Nhóm lựa chọn ma trận 2x2 và 3x3 -->
-    <RadioGroup
-        android:id="@+id/matrixSelectionGroup"
+    <TextView
+        android:id="@+id/textViewKhoa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/nhapvanban"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:layout_marginTop="16dp"
+        android:text="Khóa"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="@+id/nhapvanban"
+        app:layout_constraintTop_toBottomOf="@+id/nhapvanban" />
 
-        <RadioButton
-            android:id="@+id/radio2x2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ma trận 2x2" />
-
-        <RadioButton
-            android:id="@+id/radio3x3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ma trận 3x3" />
-    </RadioGroup>
-
-    <!-- Nhập liệu cho ma trận 2x2 (ẩn mặc định) -->
     <GridLayout
         android:id="@+id/matrix2x2Inputs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:rowCount="2"
         android:columnCount="2"
-        app:layout_constraintTop_toBottomOf="@id/matrixSelectionGroup"
+        android:rowCount="2"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewKhoa"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <EditText
-            android:id="@+id/matrix2x2_00"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:inputType="number"
-            android:layout_gravity="center"/>
-
-        <EditText
-            android:id="@+id/matrix2x2_10"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:inputType="number"
-            android:layout_gravity="center"/>
-        <EditText
-            android:id="@+id/matrix2x2_01"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:inputType="number"
-            android:layout_gravity="center"/>
-
-        <EditText
-            android:id="@+id/matrix2x2_11"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:inputType="number"
-            android:layout_gravity="center"/>
+        <EditText android:id="@+id/matrix2x2_00" android:layout_width="60dp" android:layout_height="60dp" android:inputType="number" android:background="@drawable/edit_text_background"/>
+        <EditText android:id="@+id/matrix2x2_01" android:layout_width="60dp" android:layout_height="60dp" android:inputType="number" android:background="@drawable/edit_text_background"/>
+        <EditText android:id="@+id/matrix2x2_10" android:layout_width="60dp" android:layout_height="60dp" android:inputType="number" android:background="@drawable/edit_text_background"/>
+        <EditText android:id="@+id/matrix2x2_11" android:layout_width="60dp" android:layout_height="60dp" android:inputType="number" android:background="@drawable/edit_text_background"/>
     </GridLayout>
 
-    <!-- Nhập liệu cho ma trận 3x3 (ẩn mặc định) -->
-    <GridLayout
-        android:id="@+id/matrix3x3Inputs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:rowCount="3"
-        android:columnCount="3"
-        app:layout_constraintTop_toBottomOf="@id/matrixSelectionGroup"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp">
-
-        <!-- Row 1 -->
-        <EditText
-            android:id="@+id/matrix3x3_00"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:inputType="number"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/matrix3x3_01"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:inputType="number"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/matrix3x3_02"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:inputType="number"
-            android:gravity="center"/>
-
-        <!-- Row 2 -->
-        <EditText
-            android:id="@+id/matrix3x3_10"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:inputType="number"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/matrix3x3_11"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:inputType="number"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/matrix3x3_12"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:inputType="number"
-            android:gravity="center"/>
-
-        <!-- Row 3 -->
-        <EditText
-            android:id="@+id/matrix3x3_20"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:inputType="number"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/matrix3x3_21"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:inputType="number"
-            android:gravity="center"/>
-
-        <EditText
-            android:id="@+id/matrix3x3_22"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:inputType="number"
-            android:gravity="center"/>
-    </GridLayout>
-
-    <!-- Nút mã hóa -->
-    <Button
-        android:id="@+id/mahoa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="#6200EE"
-        android:text="Mã hóa"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.717"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/matrix3x3Inputs" />
-
-    <!-- Nút giải mã -->
     <Button
         android:id="@+id/giaima"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="#6200EE"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
         android:text="Giải mã"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintTop_toBottomOf="@id/matrix2x2Inputs"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/matrix3x3Inputs" />
+        app:layout_constraintEnd_toStartOf="@id/mahoa" />
 
-    <!-- Kết quả mã hóa/giải mã -->
+    <Button
+        android:id="@+id/mahoa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Mã hóa"
+        app:layout_constraintTop_toTopOf="@id/giaima"
+        app:layout_constraintStart_toEndOf="@id/giaima"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <TextView
         android:id="@+id/ketqua"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Kết quả sẽ xuất hiện ở đây"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        android:textStyle="italic"
-        android:gravity="center"
-        android:paddingTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/mahoa"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp" />
-
+        android:layout_marginEnd="16dp"
+        android:text="Kết quả sẽ xuất hiện ở đây"
+        app:layout_constraintTop_toBottomOf="@id/giaima"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
