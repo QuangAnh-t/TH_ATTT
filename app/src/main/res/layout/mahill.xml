@@ -6,5 +6,110 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MahillActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgr"/>
+    <ImageView
+        android:id="@+id/myImageView"
+        android:layout_width="177dp"
+        android:layout_height="277dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="236dp"
+        android:contentDescription="My image description"
+        android:src="@drawable/anhnhom8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.832" />
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mã hóa Hill"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp" />
+
+
+    <EditText
+        android:id="@+id/nhapvanban"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nhập văn bản cần mã hóa/giải mã"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp" />
+
+
+    <EditText
+        android:id="@+id/nhapkhoa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nhập khóa"
+        android:inputType="number"
+        android:textColor="#000000"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/nhapvanban"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp" />
+
+
+    <Button
+        android:id="@+id/mahoa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#6200EE"
+        android:text="Mã hóa"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.717"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nhapkhoa" />
+
+    <Button
+        android:id="@+id/giaima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#6200EE"
+        android:text="Giải hóa"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nhapkhoa" />
+
+    <TextView
+        android:id="@+id/ketqua"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Kết quả sẽ xuất hiện ở đây"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:paddingTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/mahoa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
