@@ -47,7 +47,7 @@ public class MaaffineActivity extends AppCompatActivity {
             hienthi.setText("Vui Lòng Nhập Thông Tin");
             return;
 
-        } else if (!text.matches("^[a-zA-Z]+$")) {
+        } else if (!text.matches("^[a-zA-Z ]+$")) {
             hienthi.setText("Vui Lòng Nhập Chữ Cho Văn Bản");
             return;
         }
@@ -80,7 +80,7 @@ public class MaaffineActivity extends AppCompatActivity {
             hienthi.setText("Vui Lòng Nhập Thông Tin");
 
 
-        } else if (!text.matches("^[a-zA-z]+$")) {
+        } else if (!text.matches("^[a-zA-z ]+$")) {
             hienthi.setText("Vui Lòng Nhập Chữ Cho Văn Bản");
 
         } else {
