@@ -31,7 +31,7 @@ public class MavigenereActivity extends AppCompatActivity {
                 String text = inputText.getText().toString().toUpperCase();
                 String key = inputKey.getText().toString().toUpperCase();
                 if (!text.matches("^[a-zA-Z ]+$") || !key.matches("^[a-zA-Z]+$")) {
-                    Toast.makeText(MavigenereActivity.this, "Vui lòng nhập chữ cho cả văn bản và khóa.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MavigenereActivity.this, "Vui lòng nhập chữ cho cả văn bản và khóa không chưa kí tự đặc biệt.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -46,7 +46,7 @@ public class MavigenereActivity extends AppCompatActivity {
                 String text = inputText.getText().toString().toUpperCase();
                 String key = inputKey.getText().toString().toUpperCase();
                 if (!text.matches("^[a-zA-Z ]+$") || !key.matches("^[a-zA-Z]+$")) {
-                    Toast.makeText(MavigenereActivity.this, "Vui lòng nhập chữ cho cả văn bản và khóa.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MavigenereActivity.this, "Vui lòng nhập chữ cho cả văn bản và khóa không chưa kí tự đặc biệt.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -56,6 +56,7 @@ public class MavigenereActivity extends AppCompatActivity {
             }
         });
     }
+
     private String taoKhoa(String text, String key) {
         StringBuilder keyBuilder = new StringBuilder(key);
         for (int i = 0; i < text.length() - key.length(); i++) {
@@ -63,19 +64,33 @@ public class MavigenereActivity extends AppCompatActivity {
         }
         return keyBuilder.toString();
     }
-    private String maHoa(String text, String key) {
+
+        private String maHoa(String text, String key) {
         StringBuilder encryptedText = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
-            char c = (char) (((text.charAt(i) + key.charAt(i)) % 26) + 'A');
-            encryptedText.append(c);
+            char c = text.charAt(i);
+            if (c == ' ') {
+                encryptedText.append(' ');
+            } else {
+                char k = key.charAt(i);
+                char encrypted = (char) (((c - 'A' + k - 'A') % 26) + 'A');
+                encryptedText.append(encrypted);
+            }
         }
         return encryptedText.toString();
     }
+
     private String giaiMa(String text, String key) {
         StringBuilder decryptedText = new StringBuilder();
         for (int i = 0; i < text.length(); i++) {
-            char c = (char) (((text.charAt(i) - key.charAt(i) + 26) % 26) + 'A');
-            decryptedText.append(c);
+            char c = text.charAt(i);
+            if (c == ' ') {
+                decryptedText.append(' ');
+            } else {
+                char k = key.charAt(i);
+                char decrypted = (char) (((c - k + 26) % 26) + 'A');
+                decryptedText.append(decrypted);
+            }
         }
         return decryptedText.toString();
     }
