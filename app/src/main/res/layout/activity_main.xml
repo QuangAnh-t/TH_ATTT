@@ -17,7 +17,7 @@
             android:id="@+id/textView"
             android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="36dp"
 
             android:foregroundGravity="center"
             android:gravity="center"
@@ -30,7 +30,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.539"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -151,6 +151,23 @@
             app:layout_constraintHorizontal_bias="0.534"
             app:layout_constraintStart_toStartOf="@+id/mahang"
             app:layout_constraintTop_toBottomOf="@+id/mahang" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/marsa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Mã RSA"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:padding="10dp"
+            app:cornerRadius="16dp"
+            android:elevation="4dp"
+            android:backgroundTint="#00008B"
+            app:layout_constraintEnd_toEndOf="@+id/mathaythedonbang"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="@+id/mathaythedonbang"
+            app:layout_constraintTop_toBottomOf="@+id/mathaythedonbang" />
 
         <ImageView
             android:id="@+id/myImageView"
