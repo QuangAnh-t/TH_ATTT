@@ -53,6 +53,9 @@ public class MahillActivity extends AppCompatActivity {
             public void onClick(View v) {
                String vanBan = nhapVanBan.getText().toString();
                int[][] maTranKhoa = layMaTranNhap();
+               if (maTranKhoa == null) {
+                   return;
+               }
                String vanBanDaMaHoa = maHoa(vanBan, maTranKhoa);
                ketQua.setText("Kết quả mã hóa: " + vanBanDaMaHoa);
             }
@@ -64,6 +67,9 @@ public class MahillActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String vanBan = nhapVanBan.getText().toString();
                 int[][] maTranKhoa = layMaTranNhap();
+                if (maTranKhoa == null) {
+                    return;
+                }
                 String vanBanDaGiaiMa = giaiMa(vanBan, maTranKhoa);
                 ketQua.setText("Kết quả giải mã: " + vanBanDaGiaiMa);
             }
@@ -127,19 +133,19 @@ public class MahillActivity extends AppCompatActivity {
         }
         if (kichThuocMaTran == 2) {
             for (int i = 0; i < vanBan.length(); i += 2) {
-               a = (i< vanBan.length()) ? (vanBan.charAt(i) - 'A') : 0;
-               b = (i + 1< vanBan.length()) ? (vanBan.charAt(i + 1) - 'A') : 0;
-               int kytumahoa1 = (a * maTranKhoa[0][0] + b * maTranKhoa[0][1]) % 26;
-               int kytumahoa2 = (a * maTranKhoa[1][0] + b * maTranKhoa[1][1]) % 26;
-               vanBanDaMaHoa.append((char) (kytumahoa1 + 'A'));
-               vanBanDaMaHoa.append((char) (kytumahoa2 + 'A'));
+                int a = (i < vanBan.length()) ? (vanBan.charAt(i) - 'A') : 0;
+                int b = (i + 1 < vanBan.length()) ? (vanBan.charAt(i + 1) - 'A') : 0;
+                int kytumahoa1 = (a * maTranKhoa[0][0] + b * maTranKhoa[0][1]) % 26;
+                int kytumahoa2 = (a * maTranKhoa[1][0] + b * maTranKhoa[1][1]) % 26;
+                vanBanDaMaHoa.append((char) (kytumahoa1 + 'A'));
+                vanBanDaMaHoa.append((char) (kytumahoa2 + 'A'));
             }
         }
         else if (kichThuocMaTran == 3) {
             for (int i = 0; i < vanBan.length(); i += 3) {
-                a = (i< vanBan.length()) ? (vanBan.charAt(i) - 'A') : 0;
-                b = (i + 1< vanBan.length()) ? (vanBan.charAt(i + 1) - 'A') : 0;
-                c = (i + 2< vanBan.length()) ? (vanBan.charAt(i + 2) - 'A') : 0;
+                int a = (i < vanBan.length()) ? (vanBan.charAt(i) - 'A') : 0;
+                int b = (i + 1 < vanBan.length()) ? (vanBan.charAt(i + 1) - 'A') : 0;
+                int c = (i + 2 < vanBan.length()) ? (vanBan.charAt(i + 2) - 'A') : 0;
                 int kytumahoa1 = (a * maTranKhoa[0][0] + b * maTranKhoa[0][1] + c * maTranKhoa[0][2]) % 26;
                 int kytumahoa2 = (a * maTranKhoa[1][0] + b * maTranKhoa[1][1] + c * maTranKhoa[1][2]) % 26;
                 int kytumahoa3 = (a * maTranKhoa[2][0] + b * maTranKhoa[2][1] + c * maTranKhoa[2][2]) % 26;
@@ -150,10 +156,10 @@ public class MahillActivity extends AppCompatActivity {
         }
         else if (kichThuocMaTran == 4) {
             for (int i = 0; i < vanBan.length(); i += 4) {
-                a = (i< vanBan.length()) ? (vanBan.charAt(i) - 'A') : 0;
-                b = (i + 1< vanBan.length()) ? (vanBan.charAt(i + 1) - 'A') : 0;
-                c = (i + 2< vanBan.length()) ? (vanBan.charAt(i + 2) - 'A') : 0;
-                d = (i + 3< vanBan.length()) ? (vanBan.charAt(i + 3) - 'A') : 0;
+                int a = (i < vanBan.length()) ? (vanBan.charAt(i) - 'A') : 0;
+                int b = (i + 1 < vanBan.length()) ? (vanBan.charAt(i + 1) - 'A') : 0;
+                int c = (i + 2 < vanBan.length()) ? (vanBan.charAt(i + 2) - 'A') : 0;
+                int d = (i + 3 < vanBan.length()) ? (vanBan.charAt(i + 3) - 'A') : 0;
                 int kytumahoa1 = (a * maTranKhoa[0][0] + b * maTranKhoa[0][1] + c * maTranKhoa[0][2] + d * maTranKhoa[0][3]) % 26;
                 int kytumahoa2 = (a * maTranKhoa[1][0] + b * maTranKhoa[1][1] + c * maTranKhoa[1][2] + d * maTranKhoa[1][3]) % 26;
                 int kytumahoa3 = (a * maTranKhoa[2][0] + b * maTranKhoa[2][1] + c * maTranKhoa[2][2] + d * maTranKhoa[2][3]) % 26;
@@ -200,9 +206,21 @@ public class MahillActivity extends AppCompatActivity {
         if (n == 2) {
             return (maTran[0][0] * maTran[1][1] - maTran[0][1] * maTran[1][0] + 26) % 26;
         } else if (n == 3) {
-            return (maTran[0][0] * (maTran[1][1] * maTran[2][2] - maTran[1][2] * maTran[2][1]) - maTran[0][1] * (maTran[1][0] * maTran[2][2] - maTran[1][2] * maTran[2][0]) + maTran[0][2] * (maTran[1][0] * maTran[2][1] - maTran[1][1] * maTran[2][0])) % 26;
+            return (maTran[0][0] * (maTran[1][1] * maTran[2][2] - maTran[1][2] * maTran[2][1]) - maTran[0][1] * (maTran[1][0] * maTran[2][2] - maTran[1][2] * maTran[2][0]) + maTran[0][2] * (maTran[1][0] * maTran[2][1] - maTran[1][1] * maTran[2][0]) +26) % 26;
         } else if (n == 4) {
-            return (maTran[0][0] * ((maTran[1][1] * maTran[2][2] * maTran[3][3] + maTran[1][2] * maTran[2][3] * maTran[3][1] + maTran[1][3] * maTran[2][1] * maTran[3][2]) - (maTran[1][3] * maTran[2][2] * maTran[3][1] + maTran[3][2] * maTran[2][3] * maTran[1][1] + maTran[3][3] * maTran[2][1] * maTran[1][2]))) - (maTran[0][1] * ((maTran[1][0] * maTran[2][2] * maTran[3][3] + maTran[1][2] * maTran[2][3] * maTran[3][0] + maTran[1][3] * maTran[2][0] * maTran[3][2]) - (maTran[1][3] * maTran[2][2] * maTran[3][0] + maTran[3][2] * maTran[2][3] * maTran[1][0] + maTran[3][3] * maTran[2][0] * maTran[1][2]))) + (maTran[0][2] * (maTran[1][0] * (maTran[2][1] * maTran[3][3] + maTran[1][1] * maTran[2][3] * maTran[3][0] + maTran[1][3] * maTran[2][0] * maTran[3][1]) - (maTran[1][3] * maTran[2][1] * maTran[3][0] + maTran[3][1] * maTran[2][3] * maTran[1][0] + maTran[3][3] * maTran[2][0] * maTran[1][1]))) - (maTran[0][3] * (maTran[1][0] * (maTran[2][1] * maTran[3][2] + maTran[1][1] * maTran[2][2] * maTran[3][0] + maTran[1][2] * maTran[2][0] * maTran[3][1]) - (maTran[1][2] * maTran[2][1] * maTran[3][0] + maTran[1][0] * maTran[2][2] * maTran[3][1] + maTran[1][1] * maTran[2][0] * maTran[3][2]))) % 26;
+            int det = (maTran[0][0] * (maTran[1][1] * (maTran[2][2] * maTran[3][3] - maTran[2][3] * maTran[3][2]) 
+                                       - maTran[1][2] * (maTran[2][1] * maTran[3][3] - maTran[2][3] * maTran[3][1]) 
+                                       + maTran[1][3] * (maTran[2][1] * maTran[3][2] - maTran[2][2] * maTran[3][1])))
+                    - (maTran[0][1] * (maTran[1][0] * (maTran[2][2] * maTran[3][3] - maTran[2][3] * maTran[3][2]) 
+                                       - maTran[1][2] * (maTran[2][0] * maTran[3][3] - maTran[2][3] * maTran[3][0]) 
+                                       + maTran[1][3] * (maTran[2][0] * maTran[3][2] - maTran[2][2] * maTran[3][0])))
+                    + (maTran[0][2] * (maTran[1][0] * (maTran[2][1] * maTran[3][3] - maTran[2][3] * maTran[3][1]) 
+                                       - maTran[1][1] * (maTran[2][0] * maTran[3][3] - maTran[2][3] * maTran[3][0]) 
+                                       + maTran[1][3] * (maTran[2][0] * maTran[3][1] - maTran[2][1] * maTran[3][0])))
+                    - (maTran[0][3] * (maTran[1][0] * (maTran[2][1] * maTran[3][2] - maTran[2][2] * maTran[3][1]) 
+                                       - maTran[1][1] * (maTran[2][0] * maTran[3][2] - maTran[2][2] * maTran[3][0]) 
+                                       + maTran[1][2] * (maTran[2][0] * maTran[3][1] - maTran[2][1] * maTran[3][0])));
+            return (det + 26) % 26;
         }
         return 0;
     }

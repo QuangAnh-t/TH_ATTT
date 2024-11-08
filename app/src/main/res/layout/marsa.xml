@@ -7,6 +7,52 @@
     android:layout_height="match_parent"
     tools:context=".MarsaActivity"
     android:background="@drawable/backgr">
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter text to encrypt"
+        android:inputType="text" />
+
+    <!-- Input for public key (for encryption) -->
+    <EditText
+        android:id="@+id/publicKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter public key for encryption"
+        android:inputType="text" />
+
+    <!-- Input for private key (for decryption) -->
+    <EditText
+        android:id="@+id/privateKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter private key for decryption"
+        android:inputType="text" />
+
+    <!-- Button to encrypt -->
+    <Button
+        android:id="@+id/encryptButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Encrypt" />
+
+    <!-- Button to decrypt -->
+    <Button
+        android:id="@+id/decryptButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Decrypt" />
+
+    <!-- Output for result -->
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Result will appear here"
+        android:textColor="#000"
+        android:background="#E0E0E0" />
     
 
 </androidx.constraintlayout.widget.ConstraintLayout>
