@@ -14,7 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    Button mathaythe,madichvong,maaffine,mavigenere,mahill,mahang,mathaythedon;
+    Button mathaythe,madichvong,maaffine,mavigenere,mahill,mahang,mathaythedon,marsa;
     Handler handler = new Handler();
 
     @Override
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mahill = findViewById(R.id.mahill);
         mahang = findViewById(R.id.mahang);
         mathaythedon = findViewById(R.id.mathaythedonbang);
+        marsa = findViewById(R.id.marsa);
         madichvong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -139,6 +140,21 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }, 500);
 
+            }
+        });
+        marsa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                marsa.setBackgroundColor(Color.parseColor("#D32F2F"));
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        marsa.setBackgroundColor(Color.parseColor("#FF9800"));
+                        Intent intent = new Intent(MainActivity.this, MarsaActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.chuyencanh, R.anim.chuyencanh2);
+                    }
+                }, 500);
             }
         });
     }}
